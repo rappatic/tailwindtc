@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1E2019;
+}
+
+body {
+    margin: 0; padding: 0;
+}
+
+/* Navigation Bar */
+
+div.navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--primary);
+}
+
+img.logo {
+    display: block; margin: auto;
+    height: 10vh;
+    padding-top: 6px;
+}
+
+div.navbar div.navbar-sect {
+    float: left; height: 10vh;
+}
+
+div.navbar-right, div.navbar-left {
+    width: 43%;
+}
+
+div.navbar-center {
+    width: 14%;
+}
+
+div.navbar-sect a {
+    line-height: 10vh;
+    color: white;
+    font-family: Open Sans;
+    text-decoration: none;
+    display: block;
+    padding: 0px calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+    font-size: 1rem;
+}
+
+div.navbar-right a {
+    float: right;
+}
+
+div.navbar-left a {
+    float: left;
+}
+
+/* Floating Nabar */
+
+div.visible-header-snap {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    
+}
+
+div.invisible {
+    visibility: hidden;
+    height: 0px !important;
+    width: 0px !important;
+}
+
+div.header {
+    height: 9vh;
+    background: var(--primary);
+}
+
+div.header div.logo-container {
+    width: 7%;
+    float: left;
+    margin-left: 0.7%;
+}
+
+div.logo-container img {
+    height: 9vh;
+    margin: auto;
+    padding-top: 5px;
+}
+
+
+div.header div.links-container {
+    width: 85%;
+    float: left;
+}
+
+/* Dropdown */
+
+div.navbar-resp {
+    float: right;
+    width: 20%;
+}
+
+/* Responsive Header */
+
+@media (min-width: 800px) and (min-width: 1200px) {
+    div.header div.links-container {
+        width: 90%;
+        float: left;
+    }
+
+    div.header div.logo-container {
+        width: 5%;
+        float: left;
+        margin-left: 0.7%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+    div.navbar-center {
+        float: left !important;
+        width: auto;
+        padding-left: 10px;
+    }
+
+    div.navbar-right, div.navbar-left {
+        float: right !important;
+        width: auto;
+    }
+
+    div.navbar-right {
+        padding-right: 10px;
+    }
+
+    div.navbar-right #wnavbar-home {
+        display: none;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 799px) {
+    /* Dropdown bar */
+
+
+}
+
+
+
+div.links-container a {
+    line-height: 9vh;
+    color: white;
+    font-family: Open Sans;
+    text-decoration: none;
+    display: block;
+    padding: 0px 20px;
+    float: left;
+    font-size: 1rem;
+}
+
+/* Hero */
+
+div.hero {
+    width: 100%;
+    height: 70vh;
+    background-image: url(https://via.placeholder.com/1000x500.png?text=Tailwind+TC);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
