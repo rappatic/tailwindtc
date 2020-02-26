@@ -1,3 +1,6 @@
+/* We import Montserrat and Open Sans, the two primary fonts on the site, and define
+several important variables through :root, including the main color palate and the fontstack. */
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans&display=swap');
 
 :root {
@@ -11,12 +14,11 @@
     --open-stack: "Open Sans", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
+/* We make some changes that affect all elements, or the body, mostly for the purpose of setting
+fonts, sizing, and padding / margin settings. */
+
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-div#ieMessage {
-    padding: 40px;
 }
 
 body {
@@ -34,6 +36,18 @@ html {
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+}
+
+/* The below rules are pretty specific and universal. The code for #deus and #master provide
+important settings for the footer, while the #ieMessage defines the style of the message
+shown to users on Internet Explorer. .invisible is used by my JS to show / hide elements. */
+
+div#ieMessage {
+    padding: 40px;
+}
+
 div#deus {
     display: flex;
     flex-direction: column;
@@ -48,7 +62,8 @@ div#master {
     display: none !important;
 }
 
-/* NAVIGATION BARS */
+/* Navigation bars. This code defines the style for the navbar on desktop, along with the 
+dropowns that appear when you click on a navbar element. It's unfortunately not very responsive. */
 
 ul.nav {
     text-align: center;
@@ -110,6 +125,8 @@ div.dropdown ul li a:hover {
     cursor: pointer;
 }
 
+/* Settings for the logo container. The code is hacky and bad-practice, but looks good on all screen sizes. */
+
 div.nav-logo-container {
     background-color: var(--bg-primary);
     height: 15vh;
@@ -132,6 +149,9 @@ div.nav-logo-container button {
     top: 0;
     z-index: 5;
 }
+
+/* Mobile navbar. It's inherently different to the desktop navbar, so I have two seperate ones, and
+hide the one that doesn't fit the screen size. It's called sidebar-pop because it pops out of the side. */
 
 div.sidebar-pop:not(.visible) {
     display: none;
@@ -175,6 +195,8 @@ div.sidebar-pop ul.pop-nav li a {
 li.mobile-dropdown {
     margin-left: 40px;
 }
+
+/* This code shows / hides the navbar based on screen size. */
  
 @media screen and (min-width: 801px) {
     div.nav-logo-container button {
@@ -192,7 +214,8 @@ li.mobile-dropdown {
     }
 }
 
-/* HERO */
+/* The large image on the front page is called the hero, and we define code for its position and
+scrolling effects here. The "leader" is the text within the hero. */
 
 div.hero {
     width: 100%;
@@ -218,6 +241,9 @@ div.hero h1.leader {
     color: var(--fg-secondary);;
     font-family: var(--mont-stack);
 }
+
+/* We have so many media queries because we need to set the position of the background
+image for the hero based on screen size, to avoid unfortunately positioned faces. */
 
 @media screen and (max-width: 900px) {
     div.hero h1.leader {
@@ -250,10 +276,10 @@ div.hero h1.leader {
     }
 }
 
-/* SUBHERO CONTENT */
+/* This is what I called "subhero" content because it's exclusive to the home page, 
+and appears below the hero. It's the centered, larger text that describes the team. */
 
 div.secondary-content-wrapper {
-    /* background: linear-gradient(var(--fg-primary), var(--bg-secondary)); */
     padding: 3%;
 }
 
@@ -275,7 +301,8 @@ div.secondary-content p {
     margin-top: 0;
 }
 
-/* HEADER */
+/* The header is the little brother to the hero, without the image, that appears on
+all pages. Its background is the same as the navbar, so it appears to be one large block. */
 
 div.header {
     background-color: var(--bg-primary);
@@ -291,7 +318,8 @@ div.header h1 {
     color: var(--fg-secondary);
 }
 
-/* PRIMARY PAGE CONTENT */
+/* Primary page content defines the text that appears beneath the header on lesser pages, like the
+mission statement. It's not used for the coaches page, or wall of fame. */
 
 div.primary-page-content {
     width: 75%;
@@ -309,34 +337,11 @@ div.primary-page-content h1 {
     font-size: 1.7em;
 }
 
-/* SPLIT PAGE CONTENT */
+/* This code is exclusive to the coaches page, and defines the page split between the image and the
+coach profile. It has media queries to ensure the images appear below the text on mobile. */
 
-div.page-split {
-    width: 50%;
-    float: left;
-    padding: 3%;
-}
-
-div.page-split h1 {
-    text-align: center;
-    font-family: var(--open-stack);
-}
-
-div.page-split p {
-    font-family: var(--open-stack);
-    font-size: calc(1em + 3px);
-    text-align: center;
-}
-
-@media screen and (max-width: 700px) {
-    div.page-split {
-        width: 90%;
-        margin: 0 auto 2% auto;
-        float: none;
-    }
-}
-
-/* FOOTER */
+/* This footer uses some flex code to make sure it will *always* appear on the bottom of the page (not
+the bottom of the viewport) even if the screen size is immense. */
 
 div.footer {
     flex-shrink: 0;
@@ -352,33 +357,7 @@ div.footer p {
     margin: 0;
 }
 
-/* SOCIAL ICONS */
-
-a.fa {
-    padding: 10px;
-    font-size: 20px;
-    width: 40px;
-    text-align: center;
-    text-decoration: none;
-}
-
-a.fa:hover {
-    opacity: 0.7;
-}
-
-a.fa.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-
-/* LINK STYLES */
-
-a {
-    color: inherit;
-}
-
-/* DOWNLOAD FILE BUTTON */
+/* This defines the code for the styling of the download buttons on the signup page. */
 
 button.download-button {
     background-color: var(--bg-primary);
@@ -398,7 +377,8 @@ button.download-button:hover {
     background-color: var(--bg-secondary);
 }
 
-/* DOUBLESPLIT */
+/* This code is exclusive to the coaches page, and defines the page split between the image and the
+coach profile. It has media queries to ensure the images appear below the text on mobile. */
 
 div.half-split-container {
     display: flex;
@@ -423,7 +403,7 @@ div.half-split-container div img {
     }
 }
 
-/* WALL OF FAME */
+/* This code defines the styling for the badges on the wall of fame. */
 
 div.fame-container {
     display: flex;
@@ -439,7 +419,8 @@ div.fame-container div.fame-card {
     margin: 2%;
 }
 
-/* UPDATES CONTAINER */
+/* We hack the Facebook iframe a little to ensure that it remains responsive
+with the site. */
 
 div.facebook-updates-container {
     width: 100%;
