@@ -1,2 +1,2 @@
 # tailwindtc
-A demo for the Tailwind TC site. Access the current beta at https://rappatic.github.io/tailwindtc/
+The website for the track club Tailwind TC. https://tailwindtc.com or http://tailwindtc.org
