@@ -1,9 +1,9 @@
-// This disguisting abomination was my attempt to
-// make the navigation bar easier to maintain across
-// a dozen pages. It pulls HTML from "navbar.html" then
-// slots it into the div where the navbar code would
-// ordinarily go. If you modify navbar.html, the changes
-// made take effect across all pages of the site.
+// The disgusting abomination below was my attempt to make
+// the navbar and footer easier to maintain across a dozen
+// pages. This code will pull HTML from "navbar.html" and
+// "footer.html" and slot it into their respective places
+// across all pages, so if you modify those files, the changes
+// made take place across the entire site.
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
