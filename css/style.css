@@ -337,11 +337,8 @@ div.primary-page-content h1 {
     font-size: 1.7em;
 }
 
-/* This code is exclusive to the coaches page, and defines the page split between the image and the
-coach profile. It has media queries to ensure the images appear below the text on mobile. */
-
 /* This footer uses some flex code to make sure it will *always* appear on the bottom of the page (not
-the bottom of the viewport) even if the screen size is immense. */
+the bottom of the viewport) even if the screen size is larger. */
 
 div.footer {
     flex-shrink: 0;
